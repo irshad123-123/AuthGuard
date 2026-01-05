@@ -1,0 +1,17 @@
+.card{
+    background-color:dimgrey;
+    color: white;
+    transition: all 0.2s linear;
+}
+.card:hover{
+    transform: translateY(-5px);
+}
+.info{
+    background-color: white;
+    color:black;
+    padding: 10px;
+    border-radius: 20px;
+}
+.info1{
+    border: 5px solid black;
+}

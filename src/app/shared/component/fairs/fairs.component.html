@@ -1,0 +1,16 @@
+<div class="row mt-5">
+    <div class="col-md-5">
+        <div role="button" routerLinkActive="info1" [routerLink]="[fair.fairId]" class="card mb-2" *ngFor="let fair of fairArr">
+            <div class="card-body">
+                <h2>{{fair.fairName}}</h2>
+                <div class="info">
+                    <p class="p-0 m-0">Date : {{(fair.startDate)*1000 | date}}</p>
+                    <p class="p-0 m-0">Type : {{fair.type}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <router-outlet></router-outlet>
+    </div>
+</div>

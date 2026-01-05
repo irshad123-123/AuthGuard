@@ -1,0 +1,18 @@
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:active .nav-link:visited {
+    color: orange;
+    border-bottom: 5px solid orange;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+ul li{
+    margin-right: 20px;
+    font-size: 20px;
+}
+img{
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 20px;
+}

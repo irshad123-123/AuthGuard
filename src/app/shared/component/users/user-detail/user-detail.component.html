@@ -1,0 +1,23 @@
+<div class="card overCard">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <p>{{userObj.profession}}</p>
+                <h2>Name : {{userObj.fname}} {{userObj.lname}}</h2>
+                <h2>Email : {{userObj.email}}</h2>
+                <h2>Contact : {{userObj.contact}}</h2>
+                <button (click)="onEdit()" class="mr-2" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="onRemove()" mat-mini-fab color="warn"
+                    aria-label="Example icon button with a menu icon">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </div>
+            <div class="col-md-6 text-right">
+                <strong class="mr-3">{{userObj.userRole}}</strong>
+                <img [src]="userObj.imgUrl">
+            </div>
+        </div>
+    </div>
+</div>

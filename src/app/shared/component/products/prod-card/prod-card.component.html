@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <strong>{{prodObj.name}}</strong>
+        <span class="badge d-flex align-items-center"
+        [ngClass]="{
+            'badge-success': prodObj.rating >=4,
+            'badge-warning' : prodObj.rating <=3,
+            'badge-danger' : prodObj.rating <=2
+        }"
+        >
+            <span style="font-size:18px;" class="me-1 ">{{ prodObj.rating }}</span>
+            <mat-icon style="font-size:20px;">star</mat-icon>
+        </span>
+        </div>
+          <strong [ngClass]="{
+                'text-success' : prodObj.status === 'Available',
+                'text-danger' : prodObj.status === 'Out of Stock'
+            }">{{prodObj.status}}</strong>
+    <div class="text-center">
+        <img [src]="prodObj.imgUrl">
+        <p>{{prodObj.details}}</p>
+    </div>
+    <div>
+        <p><strong>Price : </strong>{{prodObj.price | currency : 'INR'}}</p>
+        <p><strong>Stock : </strong>{{prodObj.stock}}</p>
+        <p><strong>Discount : </strong>{{prodObj.discount}}</p>
+    </div>
+    <strong>{{prodObj.name}}</strong>
+</div>

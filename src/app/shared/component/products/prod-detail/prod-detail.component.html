@@ -1,0 +1,9 @@
+<div *ngIf="prodObj"
+(click)="onChange()"
+routerLinkActive="active1"
+[routerLink]="['single',prodObj.id]"
+class="card" role="button">
+    <div class="card-body">
+        <strong>{{prodObj.name}}</strong>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="gaurd">
+  <div class="login" *ngIf="!isAlreadyAccount">
+    <div class="card">
+      <div class="card-body">
+        <h2>Login</h2>
+        <form #loginRef="ngForm" (ngSubmit)="onLogin()">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input ngModel required name="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input ngModel required name="password" class="form-control" id="password">
+          </div>
+          <button class="btn-block" mat-raised-button color="primary">Login</button>
+          <h3 class="mb-0">Don't have an account?<a (click)="isAlreadyAccount = true" href="javascript:;"> SignUp</a>
+          </h3>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="singUp" *ngIf="isAlreadyAccount">
+    <div class="card">
+      <div class="card-body">
+        <h2>Sign Up</h2>
+        <form #signUpRef="ngForm" (ngSubmit)="onSignUp()">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input required ngModel name="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input required ngModel name="password" class="form-control" id="password">
+          </div>
+          <div class="form-group">
+            <label for="userRole">User Role</label>
+            <select required ngModel name="userRole" class="form-control" id="userRole">
+              <option value="admin">Admin</option>
+              <option value="superAdmin">SuperAdmin</option>
+              <option value="buyer">Buyer</option>
+            </select>
+          </div>
+          <button class="btn-block" mat-raised-button color="primary">Sign Up</button>
+          <h3 class="mb-0">Already have an account?<a (click)="isAlreadyAccount = false" href="javascript:;"> Login</a></h3>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-progress-spinner
+class="loader"
+*ngIf="loading"
+  mode="indeterminate"
+  diameter="50">
+</mat-progress-spinner>

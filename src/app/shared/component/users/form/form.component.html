@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-1">
+        <button routerLink="/users" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+    </div>
+    <div class="col-md-11">
+        <mat-card>
+            <mat-card-content>
+                <h2>{{isEditMode ? 'Update' : 'Add'}}</h2>
+            <form #formRef="ngForm" (ngSubmit)="onAdd()">
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <input required ngModel name="fname" matInput>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input required ngModel name="lname" matInput>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input required ngModel name="email" matInput>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Contact</mat-label>
+                    <input required ngModel name="contact" matInput>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Course</mat-label>
+                    <mat-select required ngModel name="course">
+                        <mat-option value="B.sc">B.sc</mat-option>
+                        <mat-option value="B.com">B.com</mat-option>
+                        <mat-option value="BE">BE</mat-option>
+                        <mat-option value="BCA">BCA</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>User Role</mat-label>
+                    <mat-select required ngModel name="userRole">
+                        <mat-option value="admin">Admin</mat-option>
+                        <mat-option value="candidate">Candidate</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Profession</mat-label>
+                    <input required ngModel name="profession" matInput>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Image Url</mat-label>
+                    <input required ngModel name="imgUrl" matInput>
+                </mat-form-field>
+                <button *ngIf="!isEditMode" type="submit" class="w-100" mat-raised-button color="primary">Add +</button>
+                <button
+                (click)="onUpdate()"
+                *ngIf="isEditMode" type="button" class="w-100" mat-raised-button color="primary">Update +</button>
+            </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
